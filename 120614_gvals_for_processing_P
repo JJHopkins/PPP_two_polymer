@@ -1,0 +1,16 @@
+In [42]: run conductance_interp_pure_peg200.py
+Conductance for PEG200 percentages:       3=0.835   6=0.724   9=0.609   12=0.499   15=0.402
+Conductance for PEG200_added percentages: 3=0.794   6=0.660   9=0.536   12=0.425   15=0.326
+Conductance for PEG1k_added percentages:  3=0.720   6=0.574   9=0.488   12=0.407   15=0.278
+Conductance for PEG3400 percentages:      3=0.939   6=0.960   9=0.978   12=0.981   15=0.958
+Conductance for PEG10k percentages:       3=0.910   6=0.920   9=0.962   12=1.016   15=1.063
+
+from 12.06.21
+In [53]: run conductance_interp_pure_peg200.py
+Conductance for PEG200 percentages:       3=0.819,0.826   6=0.699,0.719   9=0.594,0.622   12=0.504,0.511   15=0.429,0.392
+Conductance for PEG200_added percentages: 3=0.794,0.792   6=0.659,0.666   9=0.536,0.527   12=0.425,0.431   15=0.325,0.324
+Conductance for PEG1k_added percentages:  3=0.709,0.723   6=0.596,0.563   9=0.488,0.504   12=0.385,0.396   15=0.289,0.281
+Conductance for PEG3400 percentages:      3=0.962,0.938   6=0.999,0.962   9=1.007,0.985   12=0.986,0.970   15=0.936,0.936
+Conductance for PEG10k percentages:       3=0.977,0.955   6=1.042,0.972   9=1.082,0.986   12=1.095,0.999   15=1.082,1.011
+
+

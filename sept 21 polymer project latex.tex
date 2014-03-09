@@ -1,0 +1,331 @@
+%\documentclass{article}
+\documentclass[11pt,a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epsfig,amsmath,amssymb,array,dcolumn,subfigure,rotating}
+\usepackage{hyperref}
+\renewcommand{\baselinestretch}{1}
+\def\ul#1#2{\textstyle{\frac#1#2}}
+\def\rot{\operatorname{rot}}
+\def\diver{\operatorname{div}}
+\def\bnabla{\mbox{\boldmath $\nabla $}}
+\def\brho{\mbox{\boldmath $\rho $}}
+\def\bepsilon{\mbox{\boldmath $\epsilon $}}
+\def\Acal{\mbox{\boldmath $\mathbb A $}}
+\def\Mcal{\mbox{\boldmath $\mathbb M $}}
+\def\Dcal{\mbox{\boldmath $\mathbb D $}}
+\def\Tcal{\mbox{\boldmath $\mathbb T $}}
+\def\Pcal{\mbox{\boldmath $\mathbb P $}}
+
+\textwidth 16 true cm
+\textheight 22 true cm
+\hoffset=-15 mm
+\voffset=-10 mm
+
+\begin{document}
+
+\title{Polymer mixtures in pore equilibrium}
+\author{Written by R.P based on \\
+conversations between M.M., V.A.P. and R.P, \\
+as a project for Jaime Hopkins}
+\maketitle
+
+\begin{abstract} 
+.
+\end{abstract}
+
+\section{Introduction}
+
+We have a solution of three components: water and two types (small and big - s and b) of water soluble polymer PEG (poly-ethylene-glycol \url{http://en.wikipedia.org/wiki/Polyethylene_glycol}). The chemical formula of PEG is $$\rm-[-CH_2-CH_2-O-]_N-.$$Thus e.g. PEG with $N=9$ would have an average molecular weight of approximately 400 daltons and would be labeled PEG 400. 
+
+We will first analyze the osmotic pressure of this solution for various amounts of the sPEG added to the background of bPEG.
+
+Then we will assume that this solution is in equilibrium with a pore that can be penetrated by the sPEG but not bPEG.
+
+The background to polymer solutions can be found in the paper \cite{EOS}. And the background to this paper is the book by I. Teraoka with the title {\sl Polymer Solutions: An Introduction to Physical Properties}, Wiley-Interscience; 1 edition (March 7, 2002), which can be downloaded from the web. The complete derivation of the free energy in the limit used is presented in \cite{Muthu1,Muthu2}.
+
+\section{Free energy}
+
+We start with the form of the free energy derived by Muthukumar \cite{Muthu1}. The range of validity of this expression is given in \cite{Muthu1} and is restricted to long polymer chains such that $\phi > \phi^*$, with number fraction low enough so that higher order terms above the second virial term need not be taken into account. In this case the free energy has the form
+\begin{eqnarray}
+\frac{\Delta F(\phi_p)}{k_B T} &=& n_0 \left( \frac{\phi_p}{N_p}  \ln{\phi_p} + (1-\phi_p) \ln{(1-\phi_p)}  + \chi \phi_p - 
+{\textstyle\frac12} \phi_p^{2} + ~\alpha  \left( {\textstyle\frac12} - \chi\right)^{3/4} {\phi_p}^{9/4}\right).
+\label{ansatz1}
+\end{eqnarray}
+Here $\phi_p$ is the number fraction of the polymer $N_p$ segments long $$\phi_p = \frac{n_p N_p}{n_w + n_pN_p} = \frac{n_p N_p}{n_0},$$where $n_w$ is the number of water molecules. The constant was evaluated in \cite{Muthu1} as $\alpha = 1.87$.
+
+We now use this form of the solution free energy for a different problem, {\sl viz.} of a polymer mixture composed of two components. We assume that each of the components separately conforms to the limits of validity of the above formula. If the mixture is composed of  $n_s$ molecules of the small polymer $N_s$ monomers long, and $n_b$ molecules of the big polymer $N_b$ monomers long, in an aqueous solvent of $n_w$ water molecules than we hypothesize that the free energy of this polymer mixture is given by 
+\begin{eqnarray}
+\frac{\Delta F(n_w, n_s, n_b)}{k_B T} &=& n_w  \ln{\phi_w} + n_s  \ln{\phi_s} + n_b  \ln{\phi_b} + \chi n_0 \left( \phi_s + \phi_b\right) - 
+{\textstyle\frac12} n_0 \left( \phi_s + \phi_b \right)^{2} + \nonumber\\
+& & + ~\alpha n_0 \left( {\textstyle\frac12} - \chi\right)^{3/4} \left( \phi_s + \phi_b \right)^{9/4} = \nonumber\\
+&=& n_w  \ln{\phi_w} + n_s  \ln{\phi_s} + n_b  \ln{\phi_b} + \chi n_0 \left(1 - \phi_w\right) - 
+{\textstyle\frac12} n_0 \left( 1 - \phi_w \right)^{2} + \nonumber\\
+& & + ~\alpha n_0 \left( {\textstyle\frac12} - \chi\right)^{3/4} \left( 1 - \phi_w \right)^{9/4} 
+\label{ansatz}
+\end{eqnarray}
+{\sl i.e.} as a direct generalization of Eq. \ref{ansatz1}. The definition of the number fractions are
+\begin{equation}
+n_0 = n_w + n_s N_s + n_b N_b \qquad {\rm with} \qquad \phi_w = \frac{n_w}{n_0} \qquad \phi_s = \frac{n_s N_s}{n_0} \qquad \phi_b = \frac{n_b N_b}{n_0},
+\end{equation}
+so that $$\phi_w + \phi_s + \phi_b = 1.$$$n_0$ is the total number of molecules, i.e. the number of water molecules and all the monomers, and the fractions are the number of different types of molecules (water, \# of monomers s and \# of monomers b) divided by the total \# of all the molecules. 
+
+\section{Osmotic pressure}
+
+We now calculate the osmotic pressure of this polymer mixture. First calculate the chemical potential of water
+\begin{eqnarray}
+\mu_w &=& \frac{\partial }{\partial n_w} \left( \frac{\Delta F}{k_B T}\right)  =  \nonumber\\
+&=& \ln{\phi_w} +  \frac{n_w}{\phi_w}\left( \frac{1}{n_0} - \frac{n_w}{n_0^2} \right) 
+- \frac{n_s}{\phi_s} \frac{n_s N_s}{n_0^2}  - \frac{n_b N_b}{\phi_b} \frac{n_b}{n_0^2} +{\textstyle\frac12}\left( 1 - \phi_w \right)^{2} -  \nonumber\\
+& & - {\textstyle\frac{5}{4}} \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4} n_0^{-9/4}\left( n_s N_s + n_b N_b\right)^{9/4},
+\end{eqnarray}
+keeping everything else fixed in the derivative, thus
+\begin{eqnarray}
+\mu_w &=&  \ln{\phi_w} + 1 - \phi_w - \frac{\phi_s}{N_s} -\frac{\phi_b}{N_b} +{\textstyle\frac12}\left( 1 - \phi_w \right)^{2} - {\textstyle\frac{5}{4}} \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4} \left( \phi_s + \phi_b\right)^{9/4}.
+\end{eqnarray}
+The osmotic pressure $\Pi(\phi_s, \phi_b)$ of the solution is thus 
+\begin{eqnarray}
+\frac{\overline V \Pi(\phi_s, \phi_b)}{k_B T} &=& - \mu_w = \nonumber\\
+&=& -  \ln{\left(1 - \phi_s - \phi_b\right)} - \phi_s - \phi_b + \frac{\phi_s}{N_s} + \frac{\phi_b}{N_b} -{\textstyle\frac12}\left(\phi_s + \phi_b \right)^{2} + {\textstyle\frac{5}{4}} \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4} \left( \phi_s + \phi_b\right)^{9/4}. \nonumber\\
+~
+\end{eqnarray}
+or equivalently
+\begin{eqnarray}
+\Pi(\phi_s, \phi_b) &=& \frac{\overline V \Pi(\phi_s, \phi_b)}{k_B T} = \nonumber\\
+&=&-  \ln{\phi_w} + \phi_w -1 + \frac{\phi_s}{N_s} + \frac{\phi_b}{N_b}  - {\textstyle\frac12}\left(1-\phi_w \right)^{2} + {\textstyle\frac{5}{4}} \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4}  \left( 1-\phi_w\right)^{9/4}. \nonumber\\
+~
+\end{eqnarray}
+To the lowest order in $\phi_s + \phi_b$ the dimensionless osmotic pressure  $\Pi(\phi_s, \phi_b)$ then turns out to be
+\begin{eqnarray}
+\Pi(\phi_s, \phi_b) &\simeq& \frac{\phi_s}{N_s} + \frac{\phi_b}{N_b}  + {\textstyle\frac{5}{4}} \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4} \left( \phi_s + \phi_b\right)^{9/4} + {\cal O}\left( (\phi_s + \phi_b)^{3} \right). 
+\label{plothis}
+\end{eqnarray}
+This is exactly the formula that we used for the fit, apart from the fact that we used notation $\alpha \longrightarrow \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4}$, but adopted without any theoretical background, merely as a convenient coding form. 
+The expression for the osmotic pressure fit was in fact
+\begin{equation}
+\left( \frac{M_m}{R T}\right) \overline{V}  \Pi (C_{P1}, C_{P2})  = \left( \frac{C_{P1}}{N_1} + \frac{C_{P2}}{N_2}\right) + \tilde\alpha   \left( \overline{V} (C_{P1} + C_{P2})\right)^{9/4}.
+\label{eq2}
+\end{equation}
+Here $N_1$ is the number of monomers per chain of polymer 1 and $N_2$ is the number of monomers per chain of polymer 2 and $C_{P12}$ are the corresponding mass densities (concentrations) of the monomers. It thus appears that $\alpha$ and $\tilde\alpha$ are connected by a numerical factor of $5/4$. In our paper we found that $\tilde\alpha = 0.49$ for PEG. From now one we will use the shorthand $\tilde\alpha = \alpha \left( {\textstyle\frac12} - \chi\right)^{3/4} $.
+
+\section{Jaime's project 1}
+
+Calculate and plot the osmotic pressure of a mixture of two PEG polymers of different sizes. 
+\begin{eqnarray}
+\Pi(\phi_s, \phi_b) =-  \ln{\phi_w} + \phi_w -1 + \frac{\phi_s}{N_s} + \frac{\phi_b}{N_b}  - {\textstyle\frac12}\left(1-\phi_w \right)^{2} + {\textstyle\frac{5}{4}} \tilde\alpha  \left( 1-\phi_w\right)^{9/4}. \nonumber\\
+~
+\label{plothis2}
+\end{eqnarray}
+For water ${\overline V} = 1.0 ml/g$ and we will assume that for PEG it is actually the same \footnote{In reality for PEG is ${\overline V} = 0.825 ml/g$ }. We will take different PEGs with different amounts of monomers. 
+
+We will compare the osmotic pressure or $\Pi(\phi_s, \phi_b)$ for PEG 35000 and PEG 1000. We will compare 10, 20 and 30 \% of PEG 35000 with added 0 to 30 \% PEG 1000 as presented on Fig. \ref{fig:osm-press}.
+
+
+\section{Chemical potentials of polymers}
+
+For a mixed PEG solution in equilibrium with a pore that is permeable to one component of the PEG mixture (short one) but impermeable to another one (long one), the short PEG chain has to be in chemical equilibrium between the solution and the pore. This signifies that apart from the solvent chemical potential, the chemical potential of the short PEG chain inside the pore and in the solution has to be the same, but not its concentration. Thus it makes sense to define the {\sl partition coefficient} of the PEG type that can penetrate the pore as a quotient between the concentration inside the pore and outside in the solution.
+
+Here follows first the derivation of the chemical potential for the two PEG components of the solution as well as for water molecules.
+The chemical potential of polymer $s$ or $b$ is defined straightforwardly as
+\begin{eqnarray}
+\mu_{s} &=& \frac{\partial }{\partial n_{s} } \left( \frac{\Delta F}{k_B T}\right)  =  \ln{\phi_{s}} + 1 - \phi_{s} - \phi_w N_{s} - \phi_b \frac{N_s}{N_b} - \nonumber\\
+& &+ (\chi - {\textstyle\frac12}) N_s + {\textstyle\frac12}N_s \phi_w^2  -  {\textstyle\frac{5}{4}} \tilde\alpha N_s \left( \phi_s + \phi_b\right)^{9/4}  +  \frac{9}{4} \tilde\alpha N_s \left( \phi_s + \phi_b\right)^{5/4}  ,
+\label{mu1}
+\end{eqnarray}
+and similarly
+\begin{eqnarray}
+\mu_{b} &=& \frac{\partial }{\partial n_{b} } \left( \frac{\Delta F}{k_B T}\right)  =  \ln{\phi_{b}} + 1 - \phi_{b} - \phi_w N_{b} - \phi_s \frac{N_b}{N_s} - \nonumber\\
+& & + (\chi - {\textstyle\frac12}) N_b + {\textstyle\frac12}N_b \phi_w^2 - {\textstyle\frac{5}{4}} \tilde\alpha N_b \left( \phi_s + \phi_b\right)^{9/4}  +  \frac{9}{4} \tilde\alpha N_b \left( \phi_s + \phi_b\right)^{5/4} 
+\label{mu2}
+\end{eqnarray}
+where again all the other variables are kept fixed in the derivatives. By taking into account the expression for the chemical potential of water this can be rewritten as
+\begin{eqnarray}
+\mu_{s} - N_s \mu_w &=&  \ln{\phi_{s}} + 1 - N_s (\ln{\phi_w} +1 - \phi_w) + (\chi - 1) N_s + N_s \frac{9}{4} \tilde\alpha \left( \phi_s + \phi_b\right)^{5/4}.
+\label{ghjferw2}
+\end{eqnarray}
+{\sl Mutatis mutandis} we get for the other polymer species 
+\begin{eqnarray}
+\mu_{b} - N_b \mu_w &=&  \ln{\phi_{b}} + 1 - N_b (\ln{\phi_w} +1 - \phi_w) + (\chi - 1) N_b + N_b \frac{9}{4} \tilde\alpha \left( \phi_s + \phi_b\right)^{5/4} .
+\label{ghjferw3}
+\end{eqnarray}
+These are the final formulas for the chemical potentials of both polymer species. If there were more species, these expressions need to be properly generalized.
+
+\section{Gibbs-Duhem equality}
+
+At the end let us also check the consistency of the procedure by proving the Gibbs-Duhem equality. From what we derived above, we indeed get
+\begin{eqnarray}
+n_w\mu_{w} + n_s\mu_{s} + n_b\mu_{b} &=& \frac{\Delta F(n_w, n_s, n_b)}{k_B T},
+\label{GGeq1}
+\end{eqnarray}
+and by taking the complete differential of the above equation, while taking into account also Eqs. \ref{mu2} and \ref{mu1}, we derive
+\begin{equation}
+n_w d\mu_{w} + n_s d\mu_{s} + n_b d\mu_{b} = 0 \qquad {\rm or} \qquad n_s d\mu_{s} + n_b d\mu_{b} = \frac{\overline V }{k_B T} ~d\Pi(\phi_s, \phi_b),
+\label{GGeq2}
+\end{equation}
+where we took into account the connection between the chemical potential of water and the osmotic pressure. The two expressions, Eqs. \ref{GGeq1} and \ref{GGeq2}, are of course completely equivalent.
+
+\section{Partition coefficient}
+
+We will first calculate the partition coefficient for small polymers in solution and assume that it can penetrate the pore. We formulate the chemical equilibrium and eventually calculate the partition coefficient.
+
+Assume first a polymer solution composed of only small (s) polymers. Assume furthermore that it can enter the pore with an additional energy penalty equal to $\Delta f$. For the time being we assume that this free energy difference is a constant and does nto depend on the state of the polymer in the pore. Then if $I$ is inside the pore and $O$ is outside, chemical equilibrium is established when 
+\begin{equation}
+\mu_s (I) + \Delta f = \mu_s(O).
+\label{grapel1}
+\end{equation}
+Also, since the solvent is in chemical equilibrium too, we need to have an additional equation
+\begin{equation}
+\mu_w (I) = \mu_w(O).
+\end{equation}
+In principle at least, here too we could add a pore penetration energy. For now we do not explore this venue. The above two equations can then be rewritten in an equivalent form
+\begin{equation}
+\mu_{s}(I) - N_s \mu_w(I) + \Delta f = \mu_{s}(O) - N_s \mu_w(O) 
+\end{equation}
+Taking into account the previous results Eq. \ref{mu1} we end up with the following equation for the pore equilibrium
+\begin{eqnarray}
+& & \ln{\phi_{s}(I)} - N_s (\ln{\phi_w(I)} +1 - \phi_w(I)) + N_s \frac{9}{4} \tilde\alpha \left( \phi_s(I) + \phi_b(I)\right)^{5/4} + \Delta f = \nonumber\\
+&& \ln{\phi_{s}(O)} - N_s (\ln{\phi_w(O)} +1 - \phi_w(O)) + N_s \frac{9}{4} \tilde\alpha \left( \phi_s(O) + \phi_b(O)\right)^{5/4}
+\end{eqnarray}
+where we took out all the irrelevant constants. Also since by assumption the big polymer can not penetrate the pore $ \phi_b(I) = 0$. Therefore
+\begin{eqnarray}
+& & \ln{\phi_{s}(I)} - N_s (\ln{(1-\phi_{s}(I))} +\phi_{s}(I)) + N_s \frac{9}{4} \tilde\alpha \phi_s(I)^{5/4} + \Delta f = \nonumber\\
+&& \ln{\phi_{s}(O)} - N_s (\ln{(1 - \phi_s(O) - \phi_b(O))} + \phi_s(O) + \phi_b(O)) + N_s \frac{9}{4} \tilde\alpha \left( \phi_s(O) + \phi_b(O)\right)^{5/4}\nonumber\\
+~
+\end{eqnarray}
+This we can rewritten in the following way
+\begin{eqnarray}
+& & \ln\frac{\phi_{s}(I)}{\phi_{s}(O)} + \Delta f  = \nonumber\\
+& & N_s \left( \ln\frac{(1 - \phi_s(I))}{(1 - \phi_s(O) - \phi_b(O))} + (\phi_{s}(I) - \phi_s(O) - \phi_b(O))+ \frac{9}{4} \tilde\alpha \left( \left( \phi_s(O) + \phi_b(O)\right)^{5/4} - \phi_s(I)^{5/4}\right)\right). \nonumber\\
+~
+\end{eqnarray}
+In terms of the partition coefficient that is defined as
+$$p = {\frac{\phi_s(I)}{\phi_s(O)}},$$we finally remain with
+\begin{eqnarray}
+\ln{p} + \Delta f &=& N_s \left( \ln\frac{(1 - p\phi_s(O))}{(1 - \phi_s(O) - \phi_b(O))} + (p\phi_{s}(O) - \phi_s(O) - \phi_b(O))+ \right.\nonumber\\
+&& \left. + \frac{9}{4} \tilde\alpha \left( \left( \phi_s(O) + \phi_b(O)\right)^{5/4} - (p\phi_s(O))^{5/4} \right)\right).
+\label{defp1}
+\end{eqnarray}
+The solution of this equation gives us $p = p(\phi_s(O))$. 
+%Designating now simply $\phi_s(O) = \phi_s$ we can write the final equation determining the partition coefficient
+%\begin{equation}
+% \ln{p} + \Delta f  = (p - 1) \phi_s(O) + \left( \overline\mu_{s}(I) - \overline\mu_{s}(O)\right) N_s,
+%\label{defpp1}
+%\end{equation}
+%where
+%\begin{eqnarray}
+%\left( \overline\mu_{s}(I) - \overline\mu_{s}(O)\right) &=& \phi_s (1-p) +  {\textstyle\frac{5}{4}} \tilde\alpha ~p^{5/4} \phi_s^{5/4}\left( p\phi_s - {\textstyle\frac{9}{5}} \right)  - \nonumber\\
+%& & - {\textstyle\frac{5}{4}} \tilde\alpha \left( \phi_s \right)^{5/4} \left( \phi_s  - {\textstyle\frac{9}{5}}\right) -\chi \Big(\left( 1 - p\phi_s \right)^2 - \left(1-\phi_s \right)^2 \Big).
+%\label{boer1}
+%\end{eqnarray}
+%It has to solved numerically. As a start it might be a good idea to try the $\chi = 1/2$ case, which should be closest to our previous formulation. In this case the above equation reduces to 
+%\begin{equation}
+%   \fbox{
+%    $\displaystyle{
+% \ln{p}  = -  \Delta f+ N_s \ln\frac{(1 - \phi_s(O))}{(1 - p \phi_s(O))}   + N_s \frac{9}{4} \tilde\alpha \left( p^{5/4} - 1\right) \phi_s(O)^{5/4} +  N_s (1 - p) \phi_s(O). }$
+%    }
+%\label{boer1a}
+%\end{equation}
+It is this equation that we will finally solve numerically. Usually $ \Delta f$ is also a linear function of $N_s$ but we will not deal with this yet. 
+
+\section{Partition coefficient: single polymer type}
+
+Let us assume first that we have only small polymer in the pore as well as in the bulk, {\sl i.e.} $\phi_b(O) = 0$. In this case the formula Eq. \ref{defp1} is reduced to 
+\begin{equation}
+\fbox{
+    $\displaystyle{
+\ln{p} + \Delta f = N_s \left( \ln\frac{(1 - p\phi_s(O))}{(1 - \phi_s(O))} + (p - 1) \phi_{s}(O)+ + \frac{9}{4} \tilde\alpha \left(1 - p^{5/4} \right)\phi_s(O)^{5/4}\right).}$
+    }
+\label{defp2}
+\end{equation}
+This is the first equation we will be solving numerically.
+
+\section{Jaime's project 2}
+
+Calculate and plot the the partition coefficient for a solution of (s) polymer in equilibrium with the pore with an energy penalty of $\Delta f$ for entering the pore by numerically solving Eq. \ref{defp2} 
+\begin{equation}
+\ln{p} + \Delta f = N_s \left( \ln\frac{(1 - p\phi_s(O))}{(1 - \phi_s(O))} + (p - 1) \phi_{s}(O)+ + \frac{9}{4} \tilde\alpha \left(1 - p^{5/4} \right)\phi_s(O)^{5/4}\right).
+\label{degfyeir}
+\end{equation}
+We will assume again that for (s)PEG $\alpha = 0.49$ and we evaluate the partition coefficient $$p = p(\phi_s(O), \Delta f)$$and plot it as a function of $\phi_s(O)$. Curves for different $\Delta f$ should be plotted on the same graph. For the small polymer we can take PEG 1000 with $\rm N_s = 9$, which corresponds to PEG400.
+
+
+
+\section{Partition coefficient: two polymer types}
+
+For two polymer types we solve the original equation Eq. \ref{defp1}
+\begin{equation}
+\kern-1cm \fbox{
+    $\displaystyle{
+\ln{p} + \Delta f = N_s \left( \ln\frac{(1 - p\phi_s(O))}{(1 - \phi_s(O) - \phi_b(O))} + (p-1)\phi_{s}(O) - \phi_b(O)+ \frac{9}{4} \tilde\alpha \left( \left( \phi_s(O) + \phi_b(O)\right)^{5/4} - (p\phi_s(O))^{5/4} \right)\right).}$
+    }
+\label{defp3}
+\end{equation}
+This is the second equation that needs to be solved numerically.
+
+\section{Jaime's project 3}
+
+Solve numerically  Eq. \ref{defp3} 
+\begin{equation}
+\kern-1cm 
+\ln{p} + \Delta f = N_s \left( \ln\frac{(1 - p\phi_s(O))}{(1 - \phi_s(O) - \phi_b(O))} + (p-1)\phi_{s}(O) - \phi_b(O)+ \frac{9}{4} \tilde\alpha \left( \left( \phi_s(O) + \phi_b(O)\right)^{5/4} - (p\phi_s(O))^{5/4} \right)\right).
+\label{defpjaim3}
+\end{equation}
+for 
+\begin{equation}
+p = p( \phi_s(O), \phi_b(O), \Delta f),
+\end{equation}
+that is a function of the concentration of the small and the big PEG in the bulk solution as well as the energy penalty for entering the pore. We then need a graph of $$p = p( \phi_s(O), \phi_b(O))$$for different values of $\Delta f$. Everything else is the same as in the previous projects, except that now we have s polymer PEG400 with $\rm N_s = 9$ and b polymer PEG 3500 with $N_S = 40$.
+
+\section{Partition coefficient - with pore interaction}
+
+The question now is what is the energy penalty $\Delta f$ for entering the pore? Here we use the Daoud - de Gennes \cite{Daoud} and Zitserman et al. \cite{sergey} argument based on the
+fact that the polymer needs to be squeezed to enter a pore, whose diameter is smaller than the "natural" Flory radius of the chain. In this case we obtain that
+\begin{equation}
+\Delta f = k_BT N_s \left( \frac{a}{R}\right)^{\frac53} = f_0(R) N_s,
+\end{equation}
+where I assume that the length of the polymer that penetrates the pore is $N_s$. 
+%Putting this result into Eq. \ref{defpp123} we remain with
+%\begin{equation}
+%\ln{p} + f_0(R) N_s  = (p - 1) \phi_s(O) + \left( \overline\mu_{s}(I) - \overline\mu_{s}(O)\right) N_s.
+%\label{defpp1234}
+%\end{equation}
+%In numerical computations we simply assume a number for the energy per monomer of the chain inside the pore, $f_0(R)$.
+
+\section{Jaime's project 4}
+
+For later.
+
+\begin{thebibliography}{9}
+\bibitem{Muthu1} M. Muthukumar, {\sl J. Chem.Phys.} (1986) {\bf 85} 4722.
+\bibitem{Muthu2} M. Muthukumar and S.J. Edwards,  {\sl J. Chem.Phys.} (1982) {\bf 76} 2720.
+\bibitem{EOS} J.A. Cohen, R. Podgornik, P.L. Hansen, V.A. Parsegian, {\sl J Phys Chem} (2009) {\bf 113}, 3709.
+\bibitem{sergey}  V.Y. Zitserman,  A.M.  Berezhkovskii,  V.A. Parsegian,  S.M. Bezrukov, {\sl J Chem Phys} (2005) {\bf 123}, 146101.
+\bibitem{Daoud} M. Daoud and P.-G. de Gennes, LE JOURNAL DE PHYSIQUE (1977) {\bf 38}, 85.
+\end{thebibliography}
+
+\end{document}
+
+\subsection{Partition coefficient: two polymer types in the limit  $\phi_{s,b}(O) \longrightarrow 0$}
+
+Let us investigate separately the limit of $\phi_s(O) \longrightarrow 0$. In this case obviously from above we get to the lowest order in the number fractions of polymers
+\begin{eqnarray}
+\ln{p}  \simeq -  \Delta f + N_s \left( -\ln{(1 -\phi_b(O))} - \phi_b(O)+ \frac{9}{4} \tilde\alpha\left(\phi_b(O)\right)^{5/4}\right).
+\label{boer2}
+\end{eqnarray}
+to the lowest order in $\phi_s(O) $. Therefore for $\phi_b(O) \longrightarrow 0$ we get
+\begin{equation}
+ \ln{p(\phi_{s,b}(O) \longrightarrow 0)}  = - \Delta f - N_s \frac{9}{4} \tilde\alpha \phi_b(O)^{5/4},
+\label{defpp}
+\end{equation}
+There are some interesting consequences of this form. For vanishing 
+pore energy penalty, $\Delta f \longrightarrow 0$, and for small concentration of polymer $b$ the limiting expression for the parititon coefficient Eq. \ref{defpp} is given by
+\begin{equation}
+ \ln{p(\phi_{s,b}(O) \longrightarrow 0)} \simeq - N_s \frac{9}{4} \tilde\alpha \phi_b(O)^{5/4} \qquad {\rm and~thus} \qquad p(\phi_s(O) \longrightarrow 0) \simeq e^{- N_s \frac{9}{4} \tilde\alpha \phi_b(O)^{5/4}},
+\label{defpp2}
+\end{equation}
+the partition coefficient of the $s$ polymer decays stretch-exponentially with the external concentration of the $b$ polymer.  This limiting result is of course only true for vanishing pore entering energy penalty. In the opposite limit of $\Delta f \gg 1$, one gets from Eq. \ref{defpp} on the other hand
+\begin{equation}
+ \ln{p(\phi_{s,b}(O) \longrightarrow 0)} \simeq - \Delta f + {\cal O}(\phi_b(O)^{5/4}) \qquad {\rm and~thus} \qquad p(\phi_s(O) \longrightarrow 0) \simeq e^{- \Delta f},
+\label{defpp3}
+\end{equation}
+This result too transpires from the numerical solutions of Eq. \ref{defpp}.
+
